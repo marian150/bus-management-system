@@ -7,6 +7,7 @@ import java.time.LocalTime;
 public class Schedule {
     @Id
     @Column(name = "id_sch")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long schId;
 
     @Column(name = "day_week")

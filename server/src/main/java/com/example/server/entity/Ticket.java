@@ -9,6 +9,7 @@ import java.time.LocalDate;
 public class Ticket {
     @Id
     @Column(name = "id_ticket")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
 
     @Column(name = "res_date")
@@ -17,16 +18,16 @@ public class Ticket {
     @Column(name = "travel_date")
     private LocalDate travelDate;
 
-    @JoinColumn(name = "id_emp", foreignKey = @ForeignKey(name = "TICKET_EMPLOYEE_FK"))
-    @ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "id_emp", foreignKey = @ForeignKey(name = "TICKET_EMPLOYEE_FK"))
+    @ManyToOne
     private Employee employee;
 
-    @JoinColumn(name = "id_cl", foreignKey = @ForeignKey(name = "TICKET_CLIENT_FK"))
-    @ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "id_cl", foreignKey = @ForeignKey(name = "TICKET_CLIENT_FK"))
+    @ManyToOne
     private Client client;
 
-    @JoinColumn(name = "id_sch", foreignKey = @ForeignKey(name = "TICKET_SCHEDULE_FK"))
-    @ManyToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "id_sch", foreignKey = @ForeignKey(name = "TICKET_SCHEDULE_FK"))
+    @ManyToOne
     private Schedule schedule;
 
     public Ticket() {}

@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Employee {
     @Id
     @Column(name = "id_emp")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
 
     @Column(name = "emp_name")
@@ -15,7 +16,7 @@ public class Employee {
     private String phone;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_pos", foreignKey = @ForeignKey(name = "EMPLOYEE_POSITION_FK"))
+    //@JoinColumn(name = "id_pos", foreignKey = @ForeignKey(name = "EMPLOYEE_POSITION_FK"))
     private Position position;
 
     public Employee(Long empId, String name, String phone, Position position) {

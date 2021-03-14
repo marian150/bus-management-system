@@ -3,6 +3,12 @@
     <nav class="flex w-full justify-center">
       <ul class=" w-full flex justify-around items-center list-none m-0 p-0">
         <li>
+          <router-link class="p-2" to="/add">Add</router-link>
+        </li>
+        <li>
+          <router-link class="p-2" to="/delete">Delete</router-link>
+        </li>
+        <li>
           <router-link class="p-2" to="/reservation">Reservation</router-link>
         </li>
         <li>

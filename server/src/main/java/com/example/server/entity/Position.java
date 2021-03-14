@@ -1,16 +1,15 @@
 package com.example.server.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Position {
     @Id
     @Column(name = "id_pos")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long posId;
 
-    @Column(name = "pos_name")
+    @Column(name = "pos_name", unique = true)
     private String name;
 
     public Position(Long posId, String name) {

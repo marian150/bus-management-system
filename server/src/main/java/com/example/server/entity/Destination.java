@@ -1,16 +1,15 @@
 package com.example.server.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Destination {
     @Id
     @Column(name = "id_dest")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long destId;
 
-    @Column(name = "dest_name")
+    @Column(name = "dest_name", unique = true)
     private String name;
 
     @Column(name = "dest_price")
